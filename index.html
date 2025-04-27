@@ -1,825 +1,273 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlNaqa Water | Premium Mineral Water from Ajman, UAE</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="https://alnaqawater.com/favicon.ico" type="image/x-icon">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
+!DOCTYPE html
+html lang=en
+head
+    meta charset=UTF-8
+    meta name=viewport content=width=device-width, initial-scale=1.0
+    titleAlNaqa Water - Premium Mineral Water in UAEtitle
+    script src=httpscdn.tailwindcss.comscript
+    link href=httpsfonts.googleapis.comcss2family=Poppinswght@300;400;500;600;700&display=swap rel=stylesheet
+    script
+        tailwind.config = {
+            theme {
+                extend {
+                    colors {
+                        primary '#1E90FF',
+                        secondary '#0B4F6C',
+                        accent '#00B4D8',
+                    },
+                    fontFamily {
+                        sans ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
         }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, rgba(0, 105, 146, 0.9) 0%, rgba(0, 168, 232, 0.8) 100%);
-        }
-        
-        .water-drop {
-            position: relative;
-            animation: drop 3s infinite ease-in-out;
-        }
-        
-        @keyframes drop {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-        
-        .wave-bg {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-        }
-        
-        .wave-bg svg {
-            position: relative;
-            display: block;
-            width: calc(100% + 1.3px);
-            height: 150px;
-        }
-        
-        .wave-bg .shape-fill {
-            fill: #FFFFFF;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .testimonial-card {
-            transition: all 0.3s ease;
-        }
-        
-        .testimonial-card:hover {
-            transform: scale(1.03);
-        }
-        
-        .brand-blue {
-            color: #006992;
-        }
-        
-        .brand-light-blue {
-            color: #00A8E8;
-        }
-        
-        .bg-brand-blue {
-            background-color: #006992;
-        }
-        
-        .bg-brand-light-blue {
-            background-color: #00A8E8;
-        }
-        
-        .hover-bg-brand-blue:hover {
-            background-color: #005a7d;
-        }
-        
-        /* Full page hero section */
-        .full-page-hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: url('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80') center/cover no-repeat;
-        }
-        
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(0, 105, 146, 0.9) 0%, rgba(0, 168, 232, 0.8) 100%);
-            z-index: -1;
-        }
-        
-        /* Water bottle image */
-        .water-bottle {
-            max-height: 70vh;
-            object-fit: contain;
-        }
-    </style>
-</head>
-<body class="bg-gray-50">
-    <!-- Header/Navigation -->
-    <header class="fixed w-full bg-white shadow-md z-50">
-        <div class="container mx-auto px-6 py-3">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center">
-                    <div class="mr-2">
-                        <i class="fas fa-tint brand-blue text-3xl"></i>
-                    </div>
-                    <a href="#" class="text-2xl font-bold brand-blue">AlNaqa<span class="brand-light-blue">Water</span></a>
-                </div>
-                
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="brand-blue font-medium hover:text-blue-800">Home</a>
-                    <a href="#about" class="text-gray-600 font-medium hover:brand-blue">About</a>
-                    <a href="#products" class="text-gray-600 font-medium hover:brand-blue">Products</a>
-                    <a href="#quality" class="text-gray-600 font-medium hover:brand-blue">Quality</a>
-                    <a href="#testimonials" class="text-gray-600 font-medium hover:brand-blue">Testimonials</a>
-                    <a href="#contact" class="text-gray-600 font-medium hover:brand-blue">Contact</a>
-                </div>
-                
-                <div class="md:hidden">
-                    <button class="mobile-menu-button p-2 focus:outline-none">
-                        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Mobile menu -->
-            <div class="mobile-menu hidden md:hidden bg-white py-4 px-6 absolute left-0 right-0 shadow-lg">
-                <a href="#home" class="block py-2 brand-blue font-medium">Home</a>
-                <a href="#about" class="block py-2 text-gray-600 font-medium hover:brand-blue">About</a>
-                <a href="#products" class="block py-2 text-gray-600 font-medium hover:brand-blue">Products</a>
-                <a href="#quality" class="block py-2 text-gray-600 font-medium hover:brand-blue">Quality</a>
-                <a href="#testimonials" class="block py-2 text-gray-600 font-medium hover:brand-blue">Testimonials</a>
-                <a href="#contact" class="block py-2 text-gray-600 font-medium hover:brand-blue">Contact</a>
-            </div>
-        </div>
-    </header>
+    script
+head
+body class=font-sans bg-gray-50
+    !-- Navigation --
+    nav class=bg-white shadow-md sticky top-0 z-50
+        div class=container mx-auto px-6 py-3
+            div class=flex items-center justify-between
+                div class=flex items-center
+                    img src=httpsvia.placeholder.com50 alt=AlNaqa Water Logo class=h-12
+                    span class=ml-3 text-xl font-semibold text-secondaryAlNaqa Waterspan
+                div
+                div class=hidden mdflex items-center space-x-8
+                    a href=#about class=text-gray-700 hovertext-primaryAbouta
+                    a href=#mission class=text-gray-700 hovertext-primaryMissiona
+                    a href=#contact class=text-gray-700 hovertext-primaryContacta
+                    a href=# class=bg-primary text-white px-4 py-2 rounded-md hoverbg-secondary transitionOrder Nowa
+                div
+                button class=mdhidden focusoutline-none
+                    svg class=w-6 h-6 fill=none stroke=currentColor viewBox=0 0 24 24
+                        path stroke-linecap=round stroke-linejoin=round stroke-width=2 d=M4 6h16M4 12h16M4 18h16path
+                    svg
+                button
+            div
+        div
+    nav
 
-    <!-- Hero Section - Full Page -->
-    <section id="home" class="full-page-hero relative pt-16">
-        <div class="hero-background"></div>
-        <div class="hero-overlay"></div>
-        
-        <div class="wave-bg">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21, 0,0,0,321.39,56.44Z" class="shape-fill"></path>
-            </svg>
-        </div>
-        
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">Pure Mineral Water From The Heart of Ajman</h1>
-                <p class="text-xl text-white mb-8">Experience the crisp, refreshing taste of AlNaqa Water, sourced and bottled in Ajman to preserve its natural purity and mineral balance.</p>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#products" class="bg-white brand-blue hover:bg-gray-100 px-8 py-3 rounded-full font-semibold text-center transition duration-300">Our Products</a>
-                    <a href="#contact" class="border-2 border-white text-white hover:bg-white hover:brand-blue px-8 py-3 rounded-full font-semibold text-center transition duration-300">Contact Us</a>
-                </div>
-            </div>
-            <div class="md:w-1/2 flex justify-center">
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1564631026984-4f1748a0ee2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="AlNaqa Premium Mineral Water Bottle" class="rounded-lg shadow-xl water-bottle water-drop">
-                    <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-full shadow-lg">
-                        <div class="bg-blue-100 p-3 rounded-full">
-                            <i class="fas fa-award brand-blue text-2xl"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    !-- Hero Section --
+    section class=relative bg-gradient-to-r from-primary to-accent text-white
+        div class=container mx-auto px-6 py-24
+            div class=mdw-23
+                h1 class=text-4xl mdtext-5xl font-bold mb-4Pure Mineral Water From The Heart of UAEh1
+                p class=text-xl mb-8Premium quality mineral water for homes and businesses since 2010p
+                div class=flex flex-col smflex-row gap-4
+                    a href=# class=bg-white text-primary px-8 py-3 rounded-md font-medium hoverbg-gray-100 transition text-centerOrder Deliverya
+                    a href=#about class=border-2 border-white text-white px-8 py-3 rounded-md font-medium hoverbg-white hovertext-primary transition text-centerLearn Morea
+                div
+            div
+        div
+        div class=absolute bottom-0 right-0 w-13 h-full bg-blue-50 opacity-20div
+    section
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">About AlNaqa Water</h2>
-                <div class="w-20 h-1 bg-brand-blue mx-auto mb-6"></div>
-                <p class="text-gray-600 max-w-3xl mx-auto">Established in 2010, AlNaqa Water has been providing premium quality mineral water to homes and businesses across the UAE. Our commitment to purity and excellence has made us a trusted name in the industry.</p>
-            </div>
+    !-- About Section --
+    section id=about class=py-16 bg-white
+        div class=container mx-auto px-6
+            div class=text-center mb-12
+                h2 class=text-3xl font-bold text-secondary mb-4About AlNaqa Waterh2
+                div class=w-20 h-1 bg-primary mx-autodiv
+            div
             
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0">
-                    <img src="https://images.unsplash.com/photo-1603468620905-8de7d86b781e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80" alt="AlNaqa Water Bottling Facility" class="rounded-lg shadow-lg w-full">
-                </div>
-                <div class="md:w-1/2 md:pl-12">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Our Story & Mission</h3>
-                    <p class="text-gray-600 mb-6">AlNaqa Water was founded with a simple mission: to provide the purest mineral water while preserving the natural environment of our region. Our water is sourced from protected underground aquifers in Ajman, ensuring its natural mineral composition remains intact.</p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex">
-                            <div class="flex-shrink-0 mt-1">
-                                <div class="flex items-center justify-center h-10 w-10 rounded-md bg-blue-100 brand-blue">
-                                    <i class="fas fa-leaf"></i>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-medium text-gray-800">Eco-Friendly Practices</h4>
-                                <p class="text-gray-600 mt-1">We use sustainable bottling processes and recyclable materials to minimize our environmental impact.</p>
-                            </div>
-                        </div>
+            div class=flex flex-col mdflex-row items-center gap-8
+                div class=mdw-12
+                    img src=httpsimages.unsplash.comphoto-1556740738-b6a63e27c4dfixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60 alt=AlNaqa Water Bottling Facility class=rounded-lg shadow-xl
+                div
+                div class=mdw-12
+                    h3 class=text-2xl font-semibold text-secondary mb-4Established in 2010h3
+                    p class=text-gray-600 mb-6AlNaqa Water has been providing premium quality mineral water to homes and businesses across the UAE. Our commitment to purity and excellence has made us a trusted name in the industry.p
+                    div class=space-y-4
+                        div class=flex items-start
+                            div class=bg-primary rounded-full p-2 mr-4
+                                svg class=w-5 h-5 text-white fill=none stroke=currentColor viewBox=0 0 24 24
+                                    path stroke-linecap=round stroke-linejoin=round stroke-width=2 d=M5 13l4 4L19 7path
+                                svg
+                            div
+                            div
+                                h4 class=font-medium text-gray-800Protected Underground Sourcesh4
+                                p class=text-gray-600Sourced from pristine underground aquifers in Ajmanp
+                            div
+                        div
+                        div class=flex items-start
+                            div class=bg-primary rounded-full p-2 mr-4
+                                svg class=w-5 h-5 text-white fill=none stroke=currentColor viewBox=0 0 24 24
+                                    path stroke-linecap=round stroke-linejoin=round stroke-width=2 d=M5 13l4 4L19 7path
+                                svg
+                            div
+                            div
+                                h4 class=font-medium text-gray-800Advanced Filtrationh4
+                                p class=text-gray-600State-of-the-art purification while preserving natural mineralsp
+                            div
+                        div
+                    div
+                div
+            div
+        div
+    section
+
+    !-- Mission Section --
+    section id=mission class=py-16 bg-gray-50
+        div class=container mx-auto px-6
+            div class=text-center mb-12
+                h2 class=text-3xl font-bold text-secondary mb-4Our Story & Missionh2
+                div class=w-20 h-1 bg-primary mx-autodiv
+            div
+            
+            p class=text-center text-gray-600 max-w-3xl mx-auto mb-12
+                AlNaqa Water was founded with a simple mission to provide the purest mineral water while preserving the natural environment of our region. Our water is sourced from protected underground aquifers in Ajman, ensuring its natural mineral composition remains intact.
+            p
+            
+            div class=grid mdgrid-cols-3 gap-8
+                !-- Eco-Friendly Card --
+                div class=bg-white p-8 rounded-lg shadow-md hovershadow-lg transition text-center
+                    div class=bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4
+                        svg class=w-8 h-8 text-green-600 fill=none stroke=currentColor viewBox=0 0 24 24
+                            path stroke-linecap=round stroke-linejoin=round stroke-width=2 d=M13 7h8m0 0v8m0-8l-8 8-4-4-6 6path
+                        svg
+                    div
+                    h3 class=text-xl font-semibold text-secondary mb-3Eco-Friendly Practicesh3
+                    p class=text-gray-600We use sustainable bottling processes and recyclable materials to minimize our environmental impact.p
+                div
+                
+                !-- Quality Card --
+                div class=bg-white p-8 rounded-lg shadow-md hovershadow-lg transition text-center
+                    div class=bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4
+                        svg class=w-8 h-8 text-blue-600 fill=none stroke=currentColor viewBox=0 0 24 24
+                            path stroke-linecap=round stroke-linejoin=round stroke-width=2 d=M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zpath
+                        svg
+                    div
+                    h3 class=text-xl font-semibold text-secondary mb-3Rigorous Quality Controlh3
+                    p class=text-gray-600Every batch of AlNaqa water undergoes extensive testing to ensure it meets the highest standards of purity.p
+                div
+                
+                !-- Community Card --
+                div class=bg-white p-8 rounded-lg shadow-md hovershadow-lg transition text-center
+                    div class=bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4
+                        svg class=w-8 h-8 text-yellow-600 fill=none stroke=currentColor viewBox=0 0 24 24
+                            path stroke-linecap=round stroke-linejoin=round stroke-width=2 d=M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0zpath
+                        svg
+                    div
+                    h3 class=text-xl font-semibold text-secondary mb-3Community Commitmenth3
+                    p class=text-gray-600We support local initiatives and provide clean drinking water to communities in need across the UAE.p
+                div
+            div
+        div
+    section
+
+    !-- CTA Section --
+    section class=py-16 bg-primary text-white
+        div class=container mx-auto px-6 text-center
+            h2 class=text-3xl font-bold mb-6Experience the Purity of AlNaqa Waterh2
+            p class=text-xl mb-8 max-w-2xl mx-autoJoin thousands of satisfied customers who trust AlNaqa for their daily hydration needs.p
+            a href=# class=bg-white text-primary px-8 py-3 rounded-md font-medium hoverbg-gray-100 transition inline-blockOrder Nowa
+        div
+    section
+
+    !-- Contact Section --
+    section id=contact class=py-16 bg-white
+        div class=container mx-auto px-6
+            div class=text-center mb-12
+                h2 class=text-3xl font-bold text-secondary mb-4Contact Ush2
+                div class=w-20 h-1 bg-primary mx-autodiv
+            div
+            
+            div class=flex flex-col mdflex-row gap-12
+                div class=mdw-12
+                    h3 class=text-xl font-semibold text-secondary mb-4Get in Touchh3
+                    div class=space-y-6
+                        div class=flex items-start
+                            div class=bg-gray-100 rounded-full p-3 mr-4
+                                svg class=w-6 h-6 text-primary fill=none stroke=currentColor viewBox=0 0 24 24
+                                    path stroke-linecap=round stroke-linejoin=round stroke-width=2 d=M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5zpath
+                                svg
+                            div
+                            div
+                                h4 class=font-medium text-gray-800Phoneh4
+                                p class=text-gray-600+971 6743 2325p
+                            div
+                        div
                         
-                        <div class="flex">
-                            <div class="flex-shrink-0 mt-1">
-                                <div class="flex items-center justify-center h-10 w-10 rounded-md bg-blue-100 brand-blue">
-                                    <i class="fas fa-flask"></i>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-medium text-gray-800">Rigorous Quality Control</h4>
-                                <p class="text-gray-600 mt-1">Every batch of AlNaqa water undergoes extensive testing to ensure it meets the highest standards of purity.</p>
-                            </div>
-                        </div>
+                        div class=flex items-start
+                            div class=bg-gray-100 rounded-full p-3 mr-4
+                                svg class=w-6 h-6 text-primary fill=none stroke=currentColor viewBox=0 0 24 24
+                                    path stroke-linecap=round stroke-linejoin=round stroke-width=2 d=M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2zpath
+                                svg
+                            div
+                            div
+                                h4 class=font-medium text-gray-800Emailh4
+                                p class=text-gray-600contact@alnaqawater.comp
+                            div
+                        div
                         
-                        <div class="flex">
-                            <div class="flex-shrink-0 mt-1">
-                                <div class="flex items-center justify-center h-10 w-10 rounded-md bg-blue-100 brand-blue">
-                                    <i class="fas fa-hand-holding-heart"></i>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-medium text-gray-800">Community Commitment</h4>
-                                <p class="text-gray-600 mt-1">We support local initiatives and provide clean drinking water to communities in need across the UAE.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                        div class=flex items-start
+                            div class=bg-gray-100 rounded-full p-3 mr-4
+                                svg class=w-6 h-6 text-primary fill=none stroke=currentColor viewBox=0 0 24 24
+                                    path stroke-linecap=round stroke-linejoin=round stroke-width=2 d=M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zpath
+                                    path stroke-linecap=round stroke-linejoin=round stroke-width=2 d=M15 11a3 3 0 11-6 0 3 3 0 016 0zpath
+                                svg
+                            div
+                            div
+                                h4 class=font-medium text-gray-800Locationh4
+                                p class=text-gray-600 mb-2Ajman, UAEp
+                                a href=httpsmaps.app.goo.glUq7NsAZARdK3XnGq6 class=text-primary hoverunderlineView on Google Mapsa
+                            div
+                        div
+                    div
+                div
+                
+                div class=mdw-12
+                    h3 class=text-xl font-semibold text-secondary mb-4Send Us a Messageh3
+                    form class=space-y-4
+                        div
+                            label for=name class=block text-gray-700 mb-1Namelabel
+                            input type=text id=name class=w-full px-4 py-2 border border-gray-300 rounded-md focusoutline-none focusring-2 focusring-primary
+                        div
+                        div
+                            label for=email class=block text-gray-700 mb-1Emaillabel
+                            input type=email id=email class=w-full px-4 py-2 border border-gray-300 rounded-md focusoutline-none focusring-2 focusring-primary
+                        div
+                        div
+                            label for=message class=block text-gray-700 mb-1Messagelabel
+                            textarea id=message rows=4 class=w-full px-4 py-2 border border-gray-300 rounded-md focusoutline-none focusring-2 focusring-primarytextarea
+                        div
+                        button type=submit class=bg-primary text-white px-6 py-2 rounded-md hoverbg-secondary transitionSend Messagebutton
+                    form
+                div
+            div
+        div
+    section
 
-    <!-- Products Section -->
-    <section id="products" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Premium Products</h2>
-                <div class="w-20 h-1 bg-brand-blue mx-auto mb-6"></div>
-                <p class="text-gray-600 max-w-3xl mx-auto">AlNaqa Water offers a range of mineral water products to suit every need, from personal hydration to corporate events and everything in between.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Product 1 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden product-card transition duration-300">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1564631026984-4f1748a0ee2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="AlNaqa 500ml Bottle" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-xl font-bold text-gray-800">AlNaqa 500ml</h3>
-                            <span class="bg-blue-100 brand-blue text-sm font-semibold px-3 py-1 rounded-full">Bestseller</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">Perfect for personal hydration on the go. Our 500ml bottle fits perfectly in car cup holders and bags.</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xl font-bold brand-blue">AED 2.50</span>
-                            <button class="bg-brand-blue hover-bg-brand-blue text-white px-4 py-2 rounded-full text-sm font-medium transition duration-300">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product 2 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden product-card transition duration-300">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1564631026984-4f1748a0ee2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="AlNaqa 1L Bottle" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-xl font-bold text-gray-800">AlNaqa 1L</h3>
-                            <span class="bg-green-100 text-green-600 text-sm font-semibold px-3 py-1 rounded-full">Eco-Friendly</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">Ideal for daily use at home or office. Our 1L bottle features an ergonomic design for easy pouring.</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xl font-bold brand-blue">AED 4.00</span>
-                            <button class="bg-brand-blue hover-bg-brand-blue text-white px-4 py-2 rounded-full text-sm font-medium transition duration-300">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product 3 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden product-card transition duration-300">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1564631026984-4f1748a0ee2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="AlNaqa 5L Jug" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-xl font-bold text-gray-800">AlNaqa 5L</h3>
-                            <span class="bg-purple-100 text-purple-600 text-sm font-semibold px-3 py-1 rounded-full">Family Pack</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">Great for families and small offices. Our 5L jug comes with a convenient dispenser tap.</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xl font-bold brand-blue">AED 12.00</span>
-                            <button class="bg-brand-blue hover-bg-brand-blue text-white px-4 py-2 rounded-full text-sm font-medium transition duration-300">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product 4 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden product-card transition duration-300">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1564631026984-4f1748a0ee2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="AlNaqa 12L Bottle" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-xl font-bold text-gray-800">AlNaqa 12L</h3>
-                            <span class="bg-yellow-100 text-yellow-600 text-sm font-semibold px-3 py-1 rounded-full">Office Favorite</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">Perfect for offices and large families. Our 12L bottle fits standard water dispensers.</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xl font-bold brand-blue">AED 25.00</span>
-                            <button class="bg-brand-blue hover-bg-brand-blue text-white px-4 py-2 rounded-full text-sm font-medium transition duration-300">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product 5 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden product-card transition duration-300">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1564631026984-4f1748a0ee2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="AlNaqa 20L Bottle" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-xl font-bold text-gray-800">AlNaqa 20L</h3>
-                            <span class="bg-red-100 text-red-600 text-sm font-semibold px-3 py-1 rounded-full">Bulk Savings</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">Ideal for businesses and institutions. Our 20L bottles are designed for heavy usage.</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xl font-bold brand-blue">AED 35.00</span>
-                            <button class="bg-brand-blue hover-bg-brand-blue text-white px-4px-4 py-2 rounded-full text-sm font-medium transition duration-300">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product 6 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden product-card transition duration-300">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1564631026984-4f1748a0ee2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Custom Solutions" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-xl font-bold text-gray-800">Custom Solutions</h3>
-                            <span class="bg-indigo-100 text-indigo-600 text-sm font-semibold px-3 py-1 rounded-full">Bulk Orders</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">Customized water solutions for events, hotels, and corporate clients with branded options available.</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xl font-bold brand-blue">Contact Us</span>
-                            <button class="bg-brand-blue hover-bg-brand-blue text-white px-4 py-2 rounded-full text-sm font-medium transition duration-300">Get Quote</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-16">
-                <a href="#contact" class="inline-block bg-brand-blue hover-bg-brand-blue text-white px-8 py-3 rounded-full font-semibold transition duration-300">Request Bulk Order</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quality Assurance Section -->
-    <section id="quality" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Quality Assurance</h2>
-                <div class="w-20 h-1 bg-brand-blue mx-auto mb-6"></div>
-                <p class="text-gray-600 max-w-3xl mx-auto">At AlNaqa Water, we maintain the highest standards of quality control to ensure every drop of water meets our rigorous purity standards.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Quality 1 -->
-                <div class="bg-gray-50 p-8 rounded-xl text-center">
-                    <div class="flex justify-center mb-6">
-                        <div class="bg-blue-100 p-4 rounded-full">
-                            <i class="fas fa-microscope brand-blue text-3xl"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Microbiological Testing</h3>
-                    <p class="text-gray-600">Every batch undergoes comprehensive microbiological analysis to ensure complete absence of harmful bacteria and pathogens.</p>
-                </div>
-                
-                <!-- Quality 2 -->
-                <div class="bg-gray-50 p-8 rounded-xl text-center">
-                    <div class="flex justify-center mb-6">
-                        <div class="bg-blue-100 p-4 rounded-full">
-                            <i class="fas fa-flask brand-blue text-3xl"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Chemical Analysis</h3>
-                    <p class="text-gray-600">We test for over 50 chemical parameters to guarantee optimal mineral balance and absence of contaminants.</p>
-                </div>
-                
-                <!-- Quality 3 -->
-                <div class="bg-gray-50 p-8 rounded-xl text-center">
-                    <div class="flex justify-center mb-6">
-                        <div class="bg-blue-100 p-4 rounded-full">
-                            <i class="fas fa-certificate brand-blue text-3xl"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Certifications</h3>
-                    <p class="text-gray-600">Certified by UAE Ministry of Health, ESMA, and ISO 22000 for food safety management systems.</p>
-                </div>
-            </div>
-            
-            <div class="mt-16 bg-blue-50 rounded-xl p-8 md:p-12">
-                <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/2 mb-8 md:mb-0">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Advanced Purification Process</h3>
-                        <p class="text-gray-600 mb-6">AlNaqa Water employs a multi-stage purification process that combines cutting-edge technology with natural filtration methods to deliver water of exceptional purity and taste.</p>
-                        
-                        <div class="space-y-4">
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 mt-1">
-                                    <div class="flex items-center justify-center h-8 w-8 rounded-full bg-blue-100 brand-blue">
-                                        <span class="text-sm font-bold">1</span>
-                                    </div>
-                                </div>
-                                <div class="ml-4">
-                                    <p class="text-gray-800 font-medium">Natural Filtration</p>
-                                    <p class="text-gray-600 text-sm">Water passes through layers of volcanic rock and sand for natural purification.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 mt-1">
-                                    <div class="flex items-center justify-center h-8 w-8 rounded-full bg-blue-100 brand-blue">
-                                        <span class="text-sm font-bold">2</span>
-                                    </div>
-                                </div>
-                                <div class="ml-4">
-                                    <p class="text-gray-800 font-medium">Reverse Osmosis</p>
-                                    <p class="text-gray-600 text-sm">Advanced membrane technology removes dissolved solids and impurities.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 mt-1">
-                                    <div class="flex items-center justify-center h-8 w-8 rounded-full bg-blue-100 brand-blue">
-                                        <span class="text-sm font-bold">3</span>
-                                    </div>
-                                </div>
-                                <div class="ml-4">
-                                    <p class="text-gray-800 font-medium">UV Treatment</p>
-                                    <p class="text-gray-600 text-sm">Ultraviolet light eliminates any remaining microorganisms.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 mt-1">
-                                    <div class="flex items-center justify-center h-8 w-8 rounded-full bg-blue-100 brand-blue">
-                                        <span class="text-sm font-bold">4</span>
-                                    </div>
-                                </div>
-                                <div class="ml-4">
-                                    <p class="text-gray-800 font-medium">Mineral Enhancement</p>
-                                    <p class="text-gray-600 text-sm">Essential minerals are carefully balanced for optimal taste and health benefits.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="md:w-1/2 md:pl-8">
-                        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Water Purification Process" class="rounded-lg shadow-lg w-full">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">What Our Customers Say</h2>
-                <div class="w-20 h-1 bg-brand-blue mx-auto mb-6"></div>
-                <p class="text-gray-600 max-w-3xl mx-auto">Don't just take our word for it. Here's what some of our valued customers have to say about AlNaqa Water.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-white p-8 rounded-xl shadow-md testimonial-card">
-                    <div class="flex items-center mb-6">
-                        <div class="flex-shrink-0">
-                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah K." class="h-12 w-12 rounded-full">
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="text-lg font-medium text-gray-800">Sarah K.</h4>
-                            <p class="text-gray-600">Dubai</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-6">"I've been using AlNaqa Water for my family for over 3 years now. The taste is consistently fresh and clean, and I love that it's sourced locally in Ajman. Their delivery service is always punctual too!"</p>
-                    <div class="flex">
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="bg-white p-8 rounded-xl shadow-md testimonial-card">
-                    <div class="flex items-center mb-6">
-                        <div class="flex-shrink-0">
-                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Ahmed R." class="h-12 w-12 rounded-full">
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="text-lg font-medium text-gray-800">Ahmed R.</h4>
-                            <p class="text-gray-600">Abu Dhabi</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-6">"As a restaurant owner, water quality is crucial for our beverages and cooking. AlNaqa has been our trusted supplier for 5 years. Their consistent quality and reliable delivery make them our top choice."</p>
-                    <div class="flex">
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 3 -->
-                <div class="bg-white p-8 rounded-xl shadow-md testimonial-card">
-                    <div class="flex items-center mb-6">
-                        <div class="flex-shrink-0">
-                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Fatima A." class="h-12 w-12 rounded-full">
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="text-lg font-medium text-gray-800">Fatima A.</h4>
-                            <p class="text-gray-600">Sharjah</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-6">"The mineral content in AlNaqa water gives it such a refreshing taste compared to other brands. I appreciate their commitment to sustainability with their eco-friendly packaging options too."</p>
-                    <div class="flex">
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-16 text-center">
-                <a href="#contact" class="inline-block bg-brand-blue hover-bg-brand-blue text-white px-8 py-3 rounded-full font-semibold transition duration-300">Become Our Customer</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Contact AlNaqa Water</h2>
-                <div class="w-20 h-1 bg-brand-blue mx-auto mb-6"></div>
-                <p class="text-gray-600 max-w-3xl mx-auto">Have questions about our products or services? Get in touch with our team today. We're here to help!</p>
-            </div>
-            
-            <div class="flex flex-col md:flex-row">
-                <div class="md:w-1/2 mb-10 md:mb-0">
-                    <div class="bg-gray-50 p-8 rounded-xl h-full">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Our Office</h3>
-                        
-                        <div class="space-y-6">
-                            <div class="flex">
-                                <div class="flex-shrink-0">
-                                    <div class="flex items-center justify-center h-10 w-10 rounded-md bg-blue-100 brand-blue">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
-                                </div>
-                                <div class="ml-4">
-                                    <h4 class="text-lg font-medium text-gray-800">Address</h4>
-                                    <p class="text-gray-600 mt-1">Industrial Area 2, Ajman, United Arab Emirates</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex">
-                                <div class="flex-shrink-0">
-                                    <div class="flex items-center justify-center h-10 w-10 rounded-md bg-blue-100 brand-blue">
-                                        <i class="fas fa-phone-alt"></i>
-                                    </div>
-                                </div>
-                                <div class="ml-4">
-                                    <h4 class="text-lg font-medium text-gray-800">Phone</h4>
-                                    <p class="text-gray-600 mt-1">+971 6 743 2200</p>
-                                    <p class="text-gray-600 mt-1">+971 50 123 4567</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex">
-                                <div class="flex-shrink-0">
-                                    <div class="flex items-center justify-center h-10 w-10 rounded-md bg-blue-100 brand-blue">
-                                        <i class="fas fa-envelope"></i>
-                                    </div>
-                                </div>
-                                <div class="ml-4">
-                                    <h4 class="text-lg font-medium text-gray-800">Email</h4>
-                                    <p class="text-gray-600 mt-1">info@alnaqawater.com</p>
-                                    <p class="text-gray-600 mt-1">sales@alnaqawater.com</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex">
-                                <div class="flex-shrink-0">
-                                    <div class="flex items-center justify-center h-10 w-10 rounded-md bg-blue-100 brand-blue">
-                                        <i class="fas fa-clock"></i>
-                                    </div>
-                                </div>
-                                <div class="ml-4">
-                                    <h4 class="text-lg font-medium text-gray-800">Working Hours</h4>
-                                    <p class="text-gray-600 mt-1">Sunday - Thursday: 8:00 AM - 6:00 PM</p>
-                                    <p class="text-gray-600 mt-1">Friday: 9:00 AM - 1:00 PM</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-8">
-                            <h4 class="text-lg font-medium text-gray-800 mb-4">Follow Us</h4>
-                            <div class="flex space-x-4">
-                                <a href="#" class="bg-blue-100 brand-blue hover:bg-brand-blue hover:text-white h-10 w-10 rounded-full flex items-center justify-center transition duration-300">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="#" class="bg-blue-100 brand-blue hover:bg-brand-blue hover:text-white h-10 w-10 rounded-full flex items-center justify-center transition duration-300">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="#" class="bg-blue-100 brand-blue hover:bg-brand-blue hover:text-white h-10 w-10 rounded-full flex items-center justify-center transition duration-300">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="#" class="bg-blue-100 brand-blue hover:bg-brand-blue hover:text-white h-10 w-10 rounded-full flex items-center justify-center transition duration-300">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="md:w-1/2 md:pl-8">
-                    <div class="bg-gray-50 p-8 rounded-xl">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
-                        <form id="contactForm">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
-                                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
-                                </div>
-                                <div>
-                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
-                                </div>
-                            </div>
-                            
-                            <div class="mt-6">
-                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
-                            </div>
-                            
-                            <div class="mt-6">
-                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
-                                <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
-                            </div>
-                            
-                            <div class="mt-6">
-                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
-                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required></textarea>
-                            </div>
-                            
-                            <div class="mt-8">
-                                <button type="submit" class="w-full bg-brand-blue hover-bg-brand-blue text-white px-6 py-3 rounded-md font-medium transition duration-300">Send Message</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Map Section -->
-    <div class="h-96 w-full">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.963030333243!2d55.47236631501178!3d25.23919698387548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d2a3b1b3b1f%3A0x3b1b3b1f3b1b3b1f!2sAjman%2C%20United%20Arab%20Emirates!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center mb-4">
-                        <div class="mr-2">
-                            <i class="fas fa-tint brand-light-blue text-2xl"></i>
-                        </div>
-                        <a href="#" class="text-xl font-bold text-white">AlNaqa<span class="brand-light-blue">Water</span></a>
-                    </div>
-                    <p class="text-gray-400 mb-4">Premium mineral water sourced and bottled in Ajman, UAE since 2010.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
-                        <li><a href="#products" class="text-gray-400 hover:text-white transition duration-300">Products</a></li>
-                        <li><a href="#quality" class="text-gray-400 hover:text-white transition duration-300">Quality</a></li>
-                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition duration-300">Testimonials</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Products</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">500ml Bottle</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">1L Bottle</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">5L Jug</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">12L Bottle</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">20L Bottle</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Custom Solutions</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
-                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates and offers.</p>
-                    <form class="flex">
-                        <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l-md focus:outline-none text-gray-900">
-                        <button type="submit" class="bg-brand-blue hover-bg-brand-blue px-4 py-2 rounded-r-md transition duration-300">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 mb-4 md:mb-0">© 2023 AlNaqa Water. All rights reserved.</p>
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Sitemap</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.querySelector('.mobile-menu-button');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Close mobile menu when clicking on a link
-        const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            // Here you would typically send the data to a server
-            // For this example, we'll just show an alert
-            alert(`Thank you, ${name}! Your message has been received. We'll contact you soon at ${email} or ${phone}.`);
-            
-            // Reset the form
-            contactForm.reset();
-        });
-    </script>
-</body>
-</html>
+    !-- Footer --
+    footer class=bg-secondary text-white py-8
+        div class=container mx-auto px-6
+            div class=flex flex-col mdflex-row justify-between items-center
+                div class=flex items-center mb-4 mdmb-0
+                    img src=httpsvia.placeholder.com40 alt=AlNaqa Water Logo class=h-10
+                    span class=ml-3 text-lg font-semiboldAlNaqa Waterspan
+                div
+                div class=flex space-x-6
+                    a href=# class=hovertext-accent
+                        svg class=w-6 h-6 fill=currentColor viewBox=0 0 24 24
+                            path d=M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12zpath
+                        svg
+                    a
+                    a href=# class=hovertext-accent
+                        svg class=w-6 h-6 fill=currentColor viewBox=0 0 24 24
+                            path d=M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4zpath
+                        svg
+                    a
+                    a href=# class=hovertext-accent
+                        svg class=w-6 h-6 fill=currentColor viewBox=0 0 24 24
+                            path d=M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84path
+                        svg
+                    a
+                div
+            div
+            div class=border-t border-gray-700 mt-6 pt-6 text-center mdtext-left
+                p&copy; 2023 AlNaqa Water. All rights reserved.p
+            div
+        div
+    footer
+body
+html
